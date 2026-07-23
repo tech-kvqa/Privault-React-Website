@@ -1,34 +1,29 @@
 {
-  "name": "privault",
+  "name": "frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "lint": "eslint"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
   },
   "dependencies": {
-    "@gsap/react": "^2.1.2",
-    "@types/three": "^0.185.0",
-    "framer-motion": "^12.42.0",
-    "gsap": "^3.15.0",
-    "lucide-react": "^1.22.0",
-    "ogl": "^1.0.11",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
-    "react-router-dom": "^6.22.3",
-    "three": "^0.185.0"
+    "@mdi/font": "5.9.55",
+    "aos": "^2.3.4",
+    "axios": "^1.10.0",
+    "core-js": "^3.8.3",
+    "roboto-fontface": "*",
+    "vue": "^3.2.13",
+    "vue-router": "^4.0.3",
+    "vuetify": "^3.0.0-beta.0",
+    "vuex": "^4.0.0",
+    "webfontloader": "^1.0.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "@vitejs/plugin-react": "^4.2.1",
-    "eslint": "^9",
-    "tailwindcss": "^4",
-    "typescript": "^5",
-    "vite": "^5.2.0"
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-plugin-vuex": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "vue-cli-plugin-vuetify": "~2.5.8",
+    "webpack-plugin-vuetify": "^3.1.1"
   }
 }
