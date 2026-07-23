@@ -1,23 +1,31 @@
-.DS_Store
-node_modules
-/dist
+# Dependencies
+node_modules/
 
+# Build output
+dist/
 
-# local env files
-.env.local
-.env.*.local
+# Environment files
+.env
+.env.*
 
-# Log files
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# Editor directories and files
-.idea
-.vscode
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# Vercel
+.vercel/
+
+# Coverage
+coverage/
+
+# TypeScript
+*.tsbuildinfo
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/

@@ -1,0 +1,179 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Geist:wght@300;400;500;600;700;800;900&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --background: #5EA9DE; /* Primary page background (Icy/Mint Aqua) */
+  --foreground: #1F3557; /* Primary Brand Navy text */
+
+  /* Primary Brand: Twilight Navy */
+  --brand-500: #365C96;
+  --brand-600: #1F3557; /* Dominant Brand Color */
+  --brand-700: #15243B; /* Darker hover brand color */
+
+  /* Twilight Indigo */
+  --twilight-500: #4474BB;
+  --twilight-600: #365C96;
+  --twilight-700: #294570;
+
+  /* Icy Aqua Accent */
+  --accent-300: #87DEC7;
+  --accent-400: #5FD3B4;
+  --accent-500: #37C8A1;
+
+  /* Deep Space Blue */
+  --deep-700: #2F476A;
+  --deep-800: #1F2F47;
+
+  /* Neutrals mapped to shades of the palette (never pure white) */
+  --neutral-bg: #5EA9DE;
+  --neutral-card: #D4F6EE; /* Slightly lighter shade for depth */
+  --neutral-border: #A4E4D3; /* Slightly darker shade for contrast */
+  --neutral-sec-bg: #A4E4D3;
+
+  /* Typography */
+  --text-primary: #1F3557;
+  --text-secondary: #2F476A;
+  --font-editorial: "Geist", "IBM Plex Sans", sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-700: var(--brand-700);
+
+  --color-twilight-500: var(--twilight-500);
+  --color-twilight-600: var(--twilight-600);
+  --color-twilight-700: var(--twilight-700);
+
+  --color-accent-300: var(--accent-300);
+  --color-accent-400: var(--accent-400);
+  --color-accent-500: var(--accent-500);
+
+  --color-deep-700: var(--deep-700);
+  --color-deep-800: var(--deep-800);
+
+  --color-neutral-bg: var(--neutral-bg);
+  --color-neutral-card: var(--neutral-card);
+  --color-neutral-border: var(--neutral-border);
+  --color-neutral-sec-bg: var(--neutral-sec-bg);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+
+  --font-sans: "Geist", "IBM Plex Sans", sans-serif;
+  --font-display: "Baloo 2", sans-serif;
+  --font-editorial: var(--font-editorial);
+
+
+  /* Custom Animated Gradient Shift */
+  --animate-gradient-shift: gradientShift 6s ease infinite;
+
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+html {
+  /* Scroll behavior smooth is removed to prevent conflicts with GSAP ScrollTrigger */
+}
+
+/* Custom shimmer animation for the compliance map mockups data stream */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background-size: 200% auto;
+  animation: shimmer 4s linear infinite;
+}
+
+.bg-radial-vignette {
+  background: radial-gradient(circle, rgba(189,237,224,0) 30%, rgba(189,237,224,0.5) 70%, rgba(189,237,224,0.98) 100%);
+}
+
+.hero-mesh-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.14) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.78) 14%, rgba(0, 0, 0, 1) 100%);
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee-slow {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee-slow:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-slow {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+@keyframes float-bob-0 {
+  0% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(5px);
+  }
+}
+
+@keyframes float-bob-1 {
+  0% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(3px);
+  }
+}
+
+@keyframes float-bob-2 {
+  0% {
+    transform: translateY(-7px);
+  }
+  100% {
+    transform: translateY(7px);
+  }
+}
